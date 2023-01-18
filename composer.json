@@ -1,0 +1,33 @@
+{
+    "name": "reinfi/ecs-junit-formatter",
+    "description": "JUnit-Formatter for easy-coding-standard",
+    "type": "library",
+    "require": {
+        "php": "^8.1 | 8.2"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.9",
+        "phpstan/phpstan-phpunit": "^1.3",
+        "symplify/easy-coding-standard": "^11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Reinfi\\EasyCodingStandard\\": "src/"
+        }
+    },
+    "suggest": {
+        "symplify/easy-coding-standard": "To use this formatter"
+    },
+    "authors": [
+        {
+            "name": "martin.reinfandt",
+            "email": "martin.reinfandt@check24.de"
+        }
+    ],
+    "scripts": {
+        "cs-check": "ecs check",
+        "cs-fix": "ecs check --fix",
+        "phpstan": "vendor/bin/phpstan analyse --memory-limit=-1 --no-progress -c phpstan.neon.dist",
+        "test-integration": "vendor/bin/phpunit --colors=always"
+    }
+}
