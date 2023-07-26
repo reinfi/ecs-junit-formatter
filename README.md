@@ -12,7 +12,7 @@
 return static function (ECSConfig $config): void {
     [...]
 
-    $config->services()->set(JUnitOutputFormatter::class);
+    $configurator->tag(JUnitOutputFormatter::class, OutputFormatterInterface::class);
 };
 ```
 
