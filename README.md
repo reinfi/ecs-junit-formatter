@@ -9,11 +9,17 @@
 2. Register formatter in your `ecs.php`
 
 ```php
-return static function (ECSConfig $config): void {
-    [...]
+use Reinfi\EasyCodingStandard\JUnitOutputFormatter;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+use Symplify\EasyCodingStandard\Contract\Console\Output\OutputFormatterInterface;
 
-    $configurator->tag(JUnitOutputFormatter::class, OutputFormatterInterface::class);
-};
+if (isset($ecsConfig) && $ecsConfig instanceof ECSConfig) {
+    $ecsConfig->tag(JUnitOutputFormatter::class, OutputFormatterInterface::class);
+}
+
+return ECSConfig::configure()
+    [...]
+    ->withPaths([__DIR__ . '/src']);
 ```
 
 ### Usage
