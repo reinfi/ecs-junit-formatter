@@ -61,10 +61,7 @@ final class JUnitOutputFormatter implements OutputFormatterInterface
 
         foreach ($errorAndDiffResult->getSystemErrors() as $systemError) {
             if ($systemError instanceof SystemError) {
-                $result .= $this->createTestCase(
-                    $systemError->getFileWithLine(),
-                    $systemError->getMessage()
-                );
+                $result .= $this->createTestCase($systemError->getFileWithLine(), $systemError->getMessage());
             }
         }
 
