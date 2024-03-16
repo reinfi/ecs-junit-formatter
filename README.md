@@ -14,7 +14,7 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\Contract\Console\Output\OutputFormatterInterface;
 
 if (isset($ecsConfig) && $ecsConfig instanceof ECSConfig) {
-    $ecsConfig->tag(JUnitOutputFormatter::class, OutputFormatterInterface::class);
+    $ecsConfig->singleton(JUnitOutputFormatter::class);
 }
 
 return ECSConfig::configure()
